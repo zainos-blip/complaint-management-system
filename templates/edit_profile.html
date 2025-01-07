@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/dashboard" class="redirect-button">Dashboard</a>
+            <a href="/add_complaint" class="redirect-button">Add Complaint</a>
+            <a href="/logout" class="redirect-button">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <div class="container">
+        <div class="card form-container">
+            <h2>Edit Your Profile</h2>
+            
+            {% if error %}
+                <div class="error">
+                    <p>{{ error }}</p>
+                </div>
+            {% endif %}
+
+            <form method="POST" action="/edit_profile">
+                <!-- Full Name -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" value="{{ user['name'] }}" required readonly>
+
+                <!-- Email -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" value="{{ user['email'] }}" required readonly>
+
+                <!-- CNIC -->
+                <label for="cnic">CNIC:</label>
+                <input type="text" id="cnic" name="cnic" value="{{ user['cnic'] }}" required pattern="^\d{13}$" title="CNIC must be a 13-digit number">
+
+                <!-- Nationality -->
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality" value="{{ user['nationality'] }}" required>
+
+                <!-- Gender Dropdown -->
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="Male" {% if user['gender'] == 'Male' %}selected{% endif %}>Male</option>
+                    <option value="Female" {% if user['gender'] == 'Female' %}selected{% endif %}>Female</option>
+                    <option value="Other" {% if user['gender'] == 'Other' %}selected{% endif %}>Other</option>
+                </select>
+
+                <!-- Address -->
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required>{{ user['address'] }}</textarea>
+
+                <!-- Submit Button -->
+                <button type="submit" class="button">Update Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Your Company Name | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

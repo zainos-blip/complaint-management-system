@@ -1,0 +1,184 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f4fc, #dce7f9);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* General Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #28292a, #28292b);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 1.1rem;
+}
+
+.header a:hover {
+    color: #eceead;
+    text-decoration: underline;
+}
+
+/* Global Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #17191b;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Link Styles */
+a {
+    color: #4e6c9a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #000000;
+    text-decoration: zoom-in;
+}
+
+/* Button Styles */
+.button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #28292a, #28292b);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #68a8e8, #3a88d1);
+    transform: translateY(-2px);
+}
+
+/* Form Styles */
+form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+table th {
+    background: #f0f4fc;
+    color: #2d7dd2;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tr:hover {
+    background: linear-gradient(135deg, #f7faff, #eef3f9);
+}
+
+/* Card Styles */
+.card {
+    background: #ffffff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ffffffbc, #f7faff);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #28292a, #28292b);
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-top: auto;
+}

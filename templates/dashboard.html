@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/dashboard" class="redirect-button">Dashboard</a>
+            <a href="/add_complaint" class="redirect-button">Add Complaint</a>
+            <a href="/edit_profile" class="redirect-button">Edit Profile</a>
+            <a href="/logout" class="redirect-button">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Dashboard Section -->
+    <div class="container">
+        <div class="card">
+            <h2>Welcome, {{ user_name }}</h2>
+            <h3>Your Complaints:</h3>
+
+            <div class="complaints-container">
+                {% for complaint in complaints %}
+                    <div class="card complaint-card">
+                        <p><strong>Category:</strong> {{ complaint.category }}</p>
+                        <p><strong>Status:</strong> {{ complaint.status }}</p>
+                        
+                        <!-- Conditional logic for Delete button -->
+                        {% if complaint.status != "Resolved" %}
+                            <a href="/delete_complaint/{{ complaint['_id'] }}" class="button delete-btn">Delete</a>
+                        {% else %}
+                            <button class="button delete-btn disabled" disabled>Delete Locked</button>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if admin_button %}
+                <a href="/admin" class="button admin-btn">Admin Panel</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </footer>
+
+    <!-- Optional CSS -->
+    <style>
+        .disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</body>
+</html>

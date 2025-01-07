@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Complaint</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/dashboard" class="redirect-button">Dashboard</a>
+            <a href="/edit_profile" class="redirect-button">Edit Profile</a>
+            <a href="/logout" class="redirect-button">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Form Section -->
+    <div class="container">
+        <div class="card form-container">
+            <h2>Add a Complaint</h2>
+            <form method="POST">
+                <!-- Category Dropdown -->
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a Category</option>
+                    <option value="Noise Issues">Noise Issues</option>
+                    <option value="Safety and Security Concerns">Safety and Security Concerns</option>
+                    <option value="Infrastructure Complaints">Infrastructure Complaints</option>
+                    <option value="Sanitation and Cleanliness Reports">Sanitation and Cleanliness Reports</option>
+                    <option value="Environmental Violations">Environmental Violations</option>
+                    <option value="Community Service Requests">Community Service Requests</option>
+                    <option value="Housing and Rental Issues">Housing and Rental Issues</option>
+                    <option value="Parking Complaints">Parking Complaints</option>
+                    <option value="Neighborhood Disputes">Neighborhood Disputes</option>
+                    <option value="Public Amenity Problems">Public Amenity Problems</option>
+                    <option value="Accessibility Concerns">Accessibility Concerns</option>
+                    <option value="Event-Related Complaints">Event-Related Complaints</option>
+                </select>
+
+                <!-- Description -->
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <!-- Location -->
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <!-- Priority Dropdown -->
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <!-- Submit Button -->
+                <button type="submit" class="button">Submit Complaint</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

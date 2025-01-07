@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/admin" class="redirect-button">Dashboard</a>
+            <a href="/logout" class="redirect-button">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Dashboard Section -->
+    <div class="container">
+        <div class="card">
+            <h2>Welcome, Admin</h2>
+            <h3>Admin Panel</h3>
+
+            <div class="buttons-container">
+                <a href="/pending_complaints" class="button">Pending Complaints</a>
+                <a href="/resolved_complaints" class="button">Resolved Complaints</a>
+                <a href="/users" class="button">Users</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='images/background.png') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="redirect-button">Home</a>
+            <a href="/login" class="redirect-button">User Login</a>
+        </nav>
+    </header>
+
+    <!-- Admin Login Form Section -->
+    <div class="container">
+        <div class="card">
+            <h2>Admin Login</h2>
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+            <form method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

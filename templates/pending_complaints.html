@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Complaints</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/admin" class="redirect-button">Admin Dashboard</a>
+            <a href="/logout" class="redirect-button">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Pending Complaints</h2>
+            {% for complaint in complaints %}
+                <div class="card complaint-card">
+                    <p><strong>Category:</strong> {{ complaint.category }}</p>
+                    <p><strong>Description:</strong> {{ complaint.description }}</p>
+                    <p><strong>User Name:</strong> {{ complaint.user_name }}</p>
+                    <p><strong>Location:</strong> {{ complaint.location }}</p>
+                    <p><strong>Priority:</strong> {{ complaint.priority }}</p>
+                    <button class="button resolve-btn" onclick='window.location.href="/resolve_complaint/{{ complaint["_id"] }}"'>Mark as Resolved</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

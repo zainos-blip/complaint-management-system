@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='images/new.jpg') }}'); background-size: cover; background-repeat: no-repeat;"></body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav>
+            <ul class="nav-container">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <div class="card">
+        <h1>Complaint Management System</h1>
+        <p>Welcome to Society's Complaint Portal </p>
+        <div class="card">
+            <a href="/login" class="button">Login</a>
+            <a href="/register" class="button">Register</a>
+            <a href="/admin_login" class="button">Admin Login</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

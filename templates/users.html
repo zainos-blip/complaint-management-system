@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+<body style="background-image: url('{{ url_for('static', filename='images/new.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/admin" class="redirect-button">Admin Dashboard</a>
+            <a href="/logout" class="redirect-button">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Registered Users</h2>
+            {% for user_id, user_name in users.items() %}
+                <div class="card user-card">
+                    <p><strong>User ID:</strong> {{ user_id }}</p>
+                    <p><strong>Name:</strong> {{ user_name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Complaint Management System | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
